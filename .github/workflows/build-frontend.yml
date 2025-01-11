@@ -2,8 +2,6 @@ name: Build Frontend
 
 on:
   push:
-    branches:
-      - "main"
     paths: "Frontend/**"
   workflow_dispatch:
 jobs:
