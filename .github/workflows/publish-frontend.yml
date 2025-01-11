@@ -17,10 +17,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  defaults:
-    run:
-      working-directory: Frontend
   deploy:
+    defaults:
+      run:
+        working-directory: Frontend
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
