@@ -3,8 +3,8 @@ name: Build Frontend
 on:
   push:
     branches:
-      - 'main'
-    paths: 'Frontend/**'
+      - "main"
+    paths: "Frontend/**"
   workflow_dispatch:
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "22"
+      - name: Install Packages
+        run: npm ci --force
       - name: Build
-        run: |
-          npm ci --force
-          npm run build
+        run: npm run build

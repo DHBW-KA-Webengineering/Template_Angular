@@ -3,8 +3,8 @@ name: Publish Frontend
 on:
   push:
     branches:
-      - 'main'
-    paths: 'Frontend/**'
+      - "main"
+    paths: "Frontend/**"
   workflow_dispatch:
 jobs:
   publish:
@@ -28,5 +28,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: docs
+          FOLDER: dist/browser
           CLEAN: true
