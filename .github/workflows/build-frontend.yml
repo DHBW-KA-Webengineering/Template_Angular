@@ -1,0 +1,25 @@
+name: Build Frontend
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths: 'Frontend/**'
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "22"
+      - name: Build
+        run: |
+          npm ci --force
+          npm run build
